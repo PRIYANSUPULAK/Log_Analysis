@@ -7,7 +7,7 @@ The database contains newspaper articles, as well as the web server log for the 
 ## This project answers the following three questions:
 1. The most popular three articles of all time.
 2. The most popular authors of all time.
-3. The day on which more than 1% of requests lead to errors.
+3. The day on which more than 1% of HTTP requests lead to errors.
 
 ## views Made
 ### 1. article_views
@@ -18,7 +18,10 @@ The database contains newspaper articles, as well as the web server log for the 
 
 `create view errors_view as  select dates,round( (100.0*error)/total,3) as error_percent from(select date(time) as dates, sum(case when status='200 OK' then 0 else 1 end) as error ,count(*) as total from log group by date(time)) as result order by error_percent desc;`
 
-
+## Funcions used in log.py
+1. **query1():** This function prints most popular three articles of all times.
+2. **query2():** This function printd most popular authors of all time.
+3. **query3():** This function prints the days on which more than 1% of HTTP requests lead to error
 
 
 ## How to Run?
