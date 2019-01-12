@@ -7,7 +7,7 @@ The database contains newspaper articles, as well as the web server log for the 
 ## This project answers the following three questions:
 1. The most popular three articles of all time.
 2. The most popular authors of all time.
-3. The day on which more than 1st of requests lead to errors.
+3. The day on which more than 1% of requests lead to errors.
 
 ## views Made
 1. article_views
@@ -30,10 +30,10 @@ The database contains newspaper articles, as well as the web server log for the 
 `git clone  https://github.com/PRIYANSUPULAK/Log_Analysis.git`
 
 ### Start the virtual machine
-From your terminal, inside the project directory, run the command 'vagrant up'. This will cause Vagrant to download the Linux operating system and install it. When downloading is finished, you will get your shell prompt back. At this point, you can run 'vagrant ssh' to log in to your newly installed Linux VM!
+From your terminal, inside the project directory, run the command 'vagrant up'. This will cause Vagrant to download the Linux operating system and install it. When downloading is finished, you will get your shell prompt back. At this point, you can run 'vagrant ssh' to log in to your newly installed Linux VM.
 
 ### Data
-You can Download data from [here](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip)
+You can Download data from [here](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip).
 Put the downloaded file(newsdata.sql) in the vagrant folder and unzip or extract it there.
 
 ### Loading the data
