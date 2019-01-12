@@ -10,10 +10,12 @@ The database contains newspaper articles, as well as the web server log for the 
 3. The day on which more than 1% of requests lead to errors.
 
 ## views Made
-1. article_views
+### 1. article_views
+
 `create view article_views as select articles.author, articles.title, count(*) as views from articles join log on log.path like concat('%',articles.slug) group by articles.author, articles.title order by views desc;`
 
-2. errors_view
+### 2. errors_view
+
 `create view errors_view as  select dates,round( (100.0*error)/total,3) as error_percent from(select date(time) as dates, sum(case when status='200 OK' then 0 else 1 end) as error ,count(*) as total from log group by date(time)) as result order by error_percent desc;`
 
 
